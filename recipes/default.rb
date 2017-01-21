@@ -2,4 +2,12 @@
 # Cookbook:: tyw_hashicorp_vault
 # Recipe:: default
 #
-# Copyright:: 2017, The Authors, All Rights Reserved.
+# Copyright:: 2017, Tyler Wong All Rights Reserved.
+
+include_recipe 'hashicorp-vault::default'
+
+edit_resource!(:vault_config, node['hashicorp-vault']['config']['path']) do
+  backend_type 'consul'
+  backend_options 'address' => 'consul.service.consul:8500',
+                  'path' => 'vault/'
+end
