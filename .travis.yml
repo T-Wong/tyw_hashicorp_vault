@@ -16,7 +16,7 @@ branches:
   only:
     - master
 
-services: docker
+services: dokken
 
 env:
   matrix:
