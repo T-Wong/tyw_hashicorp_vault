@@ -7,6 +7,7 @@ long_description 'Installs/Configures tyw_hashicorp_vault'
 version '0.1.0'
 
 depends 'hashicorp-vault', '~> 2.4.0'
+depends 'magic_shell', '~> 1.0.0'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
