@@ -11,6 +11,11 @@ magic_shell_environment 'PATH' do
   action :add
 end
 
+magic_shell_environment 'VAULT_ADDR' do
+  value node['hashicorp-vault']['config']['address']
+  action :add
+end
+
 edit_resource!(:vault_config, node['hashicorp-vault']['config']['path']) do
   backend_type 'consul'
   backend_options 'address' => 'consul.service.consul:8500',
