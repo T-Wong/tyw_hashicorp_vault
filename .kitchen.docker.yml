@@ -1,0 +1,31 @@
+driver:
+  name: dokken
+  chef_image: chef/chef
+  chef_version: current
+  privileged: true # because Docker and SystemD/Upstart
+
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+
+verifier:
+  name: inspec
+
+platforms:
+- name: ubuntu-14.04
+  driver:
+    image: ubuntu-upstart:14.04
+    pid_one_command: /sbin/init
+    intermediate_instructions:
+      - RUN /usr/bin/apt-get update
+
+suites:
+- name: default
+  run_list:
+    - recipe[tyw_hashicorp_vault::default]
+  verifier:
+    inspec_tests:
+      - test/smoke/default
+  attributes:
