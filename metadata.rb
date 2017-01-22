@@ -1,22 +1,12 @@
 name 'tyw_hashicorp_vault'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Tyler Wong'
+maintainer_email 'ty-w@live.com'
 license 'all_rights'
 description 'Installs/Configures tyw_hashicorp_vault'
 long_description 'Installs/Configures tyw_hashicorp_vault'
+issues_url 'https://github.com/T-Wong/tyw_hashicorp_vault/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/T-Wong/tyw_hashicorp_vault' if respond_to?(:source_url)
 version '0.1.0'
 
 depends 'hashicorp-vault', '~> 2.4.0'
 depends 'magic_shell', '~> 1.0.0'
-
-# The `issues_url` points to the location where issues for this cookbook are
-# tracked.  A `View Issues` link will be displayed on this cookbook's page when
-# uploaded to a Supermarket.
-#
-# issues_url 'https://github.com/<insert_org_here>/tyw_hashicorp_vault/issues' if respond_to?(:issues_url)
-
-# The `source_url` points to the development reposiory for this cookbook.  A
-# `View Source` link will be displayed on this cookbook's page when uploaded to
-# a Supermarket.
-#
-# source_url 'https://github.com/<insert_org_here>/tyw_hashicorp_vault' if respond_to?(:source_url)
