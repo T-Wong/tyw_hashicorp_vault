@@ -12,7 +12,7 @@ magic_shell_environment 'PATH' do
 end
 
 magic_shell_environment 'VAULT_ADDR' do
-  value node['hashicorp-vault']['config']['address']
+  value "http://#{node['hashicorp-vault']['config']['address']}"
   action :add
 end
 
