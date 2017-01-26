@@ -25,5 +25,9 @@ describe 'tyw_hashicorp_vault::default' do
       expect(chef_run).to add_magic_shell_environment('PATH')
       expect(chef_run).to add_magic_shell_environment('VAULT_ADDR')
     end
+
+    it 'sets the log directory permissions' do
+      expect(chef_run).to create_directory('/var/log')
+    end
   end
 end
